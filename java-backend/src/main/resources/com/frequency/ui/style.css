@@ -1,0 +1,90 @@
+/* Frequency JavaFX Theme - Monochromatic Carbon with Forest Emerald Accents */
+.root-container {
+    -fx-background-color: #0A0A0A;
+    -fx-font-family: 'DM Sans', -apple-system, sans-serif;
+}
+
+.header-bar {
+    -fx-background-color: #121212;
+    -fx-border-color: #262626;
+    -fx-border-width: 0 0 1 0;
+}
+
+.brand-title {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.meta-text, .separator {
+    -fx-text-fill: #737373;
+    -fx-font-size: 12px;
+}
+
+.key-fingerprint {
+    -fx-text-fill: #A3A3A3;
+    -fx-font-family: 'JetBrains Mono', monospace;
+    -fx-font-size: 11px;
+}
+
+.status-badge {
+    -fx-text-fill: #10B981;
+    -fx-font-family: 'JetBrains Mono', monospace;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.section-header {
+    -fx-text-fill: #A3A3A3;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.chat-area, .peer-list, .matrix-scroll {
+    -fx-control-inner-background: #141414;
+    -fx-background-color: #141414;
+    -fx-border-color: #262626;
+    -fx-text-fill: #E5E5E5;
+    -fx-font-family: 'JetBrains Mono', monospace;
+    -fx-font-size: 12px;
+}
+
+.input-field {
+    -fx-background-color: #1A1A1A;
+    -fx-border-color: #333333;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 8 12;
+}
+
+.primary-button, .action-button {
+    -fx-background-color: #E5E5E5;
+    -fx-text-fill: #0A0A0A;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover, .action-button:hover {
+    -fx-background-color: #FFFFFF;
+}
+
+.transport-toggle {
+    -fx-text-fill: #D4D4D4;
+    -fx-font-size: 12px;
+}
+
+.custom-progress .bar {
+    -fx-background-color: #10B981;
+}
+
+.custom-progress .track {
+    -fx-background-color: #262626;
+}
+
+.speed-label {
+    -fx-text-fill: #10B981;
+    -fx-font-family: 'JetBrains Mono', monospace;
+    -fx-font-size: 12px;
+}

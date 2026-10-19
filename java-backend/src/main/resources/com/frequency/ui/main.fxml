@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.frequency.ui.FrequencyController"
+            styleClass="root-container">
+    <top>
+        <HBox spacing="16" alignment="CENTER_LEFT" styleClass="header-bar">
+            <padding><Insets top="14" right="20" bottom="14" left="20"/></padding>
+            <Label text="FREQUENCY" styleClass="brand-title"/>
+            <Label text="·" styleClass="separator"/>
+            <Label text="E2EE P2P MESH" styleClass="meta-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="fingerprintLabel" text="KEY: INITIALIZING" styleClass="key-fingerprint"/>
+            <Label fx:id="peerStatusLabel" text="LISTENING" styleClass="status-badge"/>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.35" styleClass="content-split">
+            <VBox spacing="12">
+                <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                <Label text="DISCOVERED PEERS" styleClass="section-header"/>
+                <ListView fx:id="peerListView" prefHeight="120" styleClass="peer-list"/>
+
+                <Label text="ENCRYPTED MESSAGING" styleClass="section-header"/>
+                <TextArea fx:id="messageLogArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" styleClass="chat-area"/>
+                <HBox spacing="8">
+                    <TextField fx:id="messageInputField" promptText="Type secure message..." HBox.hgrow="ALWAYS" styleClass="input-field"/>
+                    <Button text="Send" onAction="#handleSendMessage" styleClass="primary-button"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="16">
+                <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="MULTITHREADED TRANSFER ENGINE" styleClass="section-header"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <CheckBox fx:id="bleToggle" text="BLE 5.2" selected="true" onAction="#handleToggleTransports" styleClass="transport-toggle"/>
+                    <CheckBox fx:id="lanToggle" text="LAN / Wi-Fi" selected="true" onAction="#handleToggleTransports" styleClass="transport-toggle"/>
+                    <Button text="Select &amp; Send File" onAction="#handleSelectFile" styleClass="action-button"/>
+                </HBox>
+
+                <ProgressBar fx:id="transferProgressBar" progress="0.0" maxWidth="Infinity" prefHeight="12" styleClass="custom-progress"/>
+                <Label fx:id="speedLabel" text="Transfer Idle · 0 MB/s" styleClass="speed-label"/>
+
+                <Label text="ACTIVE CHUNK DISPATCH MATRIX" styleClass="section-header"/>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="matrix-scroll">
+                    <TilePane fx:id="chunkMatrixPane" hgap="4" vgap="4" prefColumns="32" styleClass="matrix-pane"/>
+                </ScrollPane>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>
